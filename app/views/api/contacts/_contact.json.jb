@@ -7,8 +7,9 @@
  email: contact.email,
  phone_number: contact.phone_number,
  bio: contact.bio,
- user: contact.user, 
+ user: contact.user,
+ groups: contact.groups.map { | group | group.name },
  formatted: {
              updated_at: contact.friendly_updated_at 
             }
-}
+} 
