@@ -7,7 +7,7 @@ class Api::ContactsController < ApplicationController
       render 'index.json.jb'
     elsif group
       group = Group.find_by(name: group)
-      @contacts = group.contacts
+      @contacts = group.contacts.where(user_id: current_user.id)
       render 'index.json.jb'
     else
       render json: {}
